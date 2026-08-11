@@ -109,6 +109,13 @@ provided as a comparison target; the training script computes fresh metrics.
 
 ## Article-faithful details
 
+- The included WUSTL derivative corrects `IdleTime`: for each flow occurrence,
+  it represents the time difference between the current flow's start and the
+  end of the previous occurrence of that flow, rather than storing that prior
+  end time itself.
+- Numeric features, including the corrected `IdleTime`, are standardized with
+  a `StandardScaler` fitted on the training split and then applied to the test
+  split.
 - KG features use source/destination entities, ports/protocol-like fields, and
   fixed 5-second windows.
 - IP/identity and timestamp fields are retained while KG features are built and
