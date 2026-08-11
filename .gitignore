@@ -1,0 +1,26 @@
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Downloaded source data and generated experiment data
+data/raw/edgeiiot/
+data/raw/wustl/*
+!data/raw/wustl/
+!data/raw/wustl/wustl_corrected.csv
+data/processed/
+
+# Local model/checkpoint artifacts if created outside data/processed
+models/
+*.keras
+*.h5
+*.pt
+*.pth
+*.joblib
+
+# OS/editor files
+.DS_Store
+.idea/
+.vscode/
