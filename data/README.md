@@ -48,6 +48,20 @@ The official source link is provided for provenance and for obtaining the
 original WUSTL-IIoT release. The article reproduction uses the included
 corrected derivative rather than silently substituting the original file.
 
+### WUSTL `IdleTime` correction
+
+The original WUSTL-IIoT release recorded `IdleTime` as the end time of the
+previous occurrence of the same flow. The included derivative corrects this so
+that `IdleTime` is the time difference between the current occurrence's
+`StartTime` and that previous occurrence's `LastTime`. The corrected numeric
+feature is subsequently standardized together with the other modeling
+features; the scaler is fitted on the training split only.
+
+The checked-in LFS file is the exact corrected derivative used for the article.
+Keeping this derivative in the repository makes the experiment reproducible
+without requiring users to reconstruct an undocumented data correction from
+the original release.
+
 The corrected file must contain at least these columns:
 
 ```text
